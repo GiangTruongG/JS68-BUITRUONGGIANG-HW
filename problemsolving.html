@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    
+    <script>
+    function rot13(str){
+        let arr = str.split('');
+        let alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        console.log(arr);
+        let arr2 = [];
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] == ' '){
+                    arr2.push(arr[i]);
+                }
+            for(let j = 0; j < alphabet.length; j++){
+
+                if(arr[i] == alphabet[j]){
+                    if(j < 13){
+                        
+                        arr2.push(alphabet[j + 13])
+                    }
+                    if(j >= 13){
+                        
+                        arr2.push(alphabet[j - 13]);
+                    }
+                }
+            }
+        }
+        let outPut = arr2.join('');
+        return outPut
+    }
+    
+    rot13("PUNEVMNEQ") 
+
+
+    /*function distanceToNearestVowel(str){
+        let arr = str.split('');
+        let arr1 = []
+        
+        for(let i = 0; i < arr.length; i++){
+            let interger = 100;
+            if(arr[i] == "a" || arr[i] == "e" || arr[i] == "i" || arr[i] == "o" || arr[i] == "u" || arr[i] == "y"){
+                arr1.push(0);
+            } else {
+                for(let j = 0; j < arr.length; j++){
+                    if(arr[j] == "a" || arr[j] == "e" || arr[j] == "i" || arr[j] == "o" || arr[j] == "u" || arr[j] == "y"){
+                        let distance = Math.abs(j - i);
+                        if(distance < interger){
+                            interger = distance;
+                        }
+                    }
+                }
+                arr1.push(interger);
+            }
+            
+        }
+        console.log(arr1);
+    }
+
+
+    distanceToNearestVowel("shopper") */
+    </script>
+
+</body>
+</html>
